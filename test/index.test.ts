@@ -198,7 +198,9 @@ describe('IssueKeyParser Suite', () => {
         issueKeyParser().parse([]);
         // @ts-ignore
         issueKeyParser().parse({});
+        // @ts-ignore
         issueKeyParser().parse(null);
+        // @ts-ignore
         issueKeyParser().parse(undefined);
     });
 });
