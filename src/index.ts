@@ -1,13 +1,15 @@
 import {issueKeyRegex} from './util/findIssueKeys';
+import Logger from './config/logger';
 
-export default class IssueKeyParser {
-    str: string;
+const logger = new Logger().getInstance();
 
-    constructor(str: string) {
-        this.str = str;
-    }
+const issueKeyParser = () => {
+    return {
+        parse: (text: string) => {
+            logger.info(`parsing: ${text}`);
+            return issueKeyRegex(text);
+        },
+    };
+};
 
-    parse() {
-        return issueKeyRegex(this.str);
-    }
-}
+export default issueKeyParser;
