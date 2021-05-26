@@ -1,4 +1,3 @@
-// import IssueKeyParser from '../src';
 import issueKeyParser from '../src';
 
 describe('IssueKeyParser Suite', () => {

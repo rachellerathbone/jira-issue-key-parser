@@ -25,6 +25,9 @@ class Singleton {
     static instance: winston.Logger;
 
     constructor() {
+        // * create a single instance of our logger so, if we ever build
+        // * this library out and need to use the logger in more than one
+        // * part of the app, we'll only ever have one logger instance
         if (!Singleton.instance) {
             Singleton.instance = winston.createLogger(logConfiguration);
         }
