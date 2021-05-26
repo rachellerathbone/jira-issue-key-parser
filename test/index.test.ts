@@ -1,7 +1,7 @@
 // import IssueKeyParser from '../src';
 import issueKeyParser from '../src';
 
-describe('IssueKeyParser', () => {
+describe('IssueKeyParser Suite', () => {
     describe('issue keys - branches', () => {
         it('extracts a single issue key from a branch - all uppercase', () => {
             const branchWithIssueKeyOnly = 'JRA-123';
@@ -110,7 +110,6 @@ describe('IssueKeyParser', () => {
         it('extracts a single issue key from a commit message/pull request', () => {
             const messageWithIssueKeyOnly = 'JrA-123';
             const messageWithIssueKeyAndText = 'JRa-456 some extra text';
-
             const messageWithTextAndIssueKey = 'some extra text jRA-789';
 
             expect(issueKeyParser().parse(messageWithIssueKeyOnly)).toEqual([
@@ -189,5 +188,17 @@ describe('IssueKeyParser', () => {
                 []
             );
         });
+    });
+
+    it('should handle incorrect types', () => {
+        // @ts-ignore
+        issueKeyParser().parse(2);
+        issueKeyParser().parse('');
+        // @ts-ignore
+        issueKeyParser().parse([]);
+        // @ts-ignore
+        issueKeyParser().parse({});
+        issueKeyParser().parse(null);
+        issueKeyParser().parse(undefined);
     });
 });

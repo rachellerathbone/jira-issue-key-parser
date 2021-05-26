@@ -17,7 +17,7 @@
  */
 
 export const issueKeyRegex = (str: string) => {
-    if (!str) return null;
+    if (typeof str !== 'string') return null;
 
     const issueKeyRegex = /[A-Za-z0-9]+-[0-9]+/g;
     const hasIssueKeys = str.match(issueKeyRegex);
