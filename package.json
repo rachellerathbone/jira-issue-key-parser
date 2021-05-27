@@ -1,6 +1,6 @@
 {
     "name": "jira-issue-key-parser",
-    "version": "0.0.7",
+    "version": "0.0.8",
     "description": "A parser for Jira issue keys.",
     "main": "dist/index.js",
     "scripts": {
