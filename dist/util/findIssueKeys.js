@@ -1,7 +1,7 @@
 "use strict";
 /**
- * Parses strings for Jira issue keys for commit messages, branches,
- * pull requests, pushes, and reference links.
+ * Parses strings for Jira issue keys for commit messages,
+ * branches, and pull requests.
  *
  * Accepted patterns:
  *      - JRA-123 (all uppercase)
