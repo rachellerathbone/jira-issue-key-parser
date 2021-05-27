@@ -18,19 +18,18 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.issueKeyRegex = void 0;
-const issueKeyRegex = (str) => {
+var issueKeyRegex = function (str) {
     if (typeof str !== 'string')
         return null;
-    const issueKeyRegex = /[A-Za-z0-9]+-[0-9]+/g;
-    const hasIssueKeys = str.match(issueKeyRegex);
-    const isNumeric = /[0-9]+/g;
-    const issueKeys = hasIssueKeys &&
+    var issueKeyRegex = /[A-Za-z0-9]+-[0-9]+/g;
+    var hasIssueKeys = str.match(issueKeyRegex);
+    var isNumeric = /[0-9]+/g;
+    var issueKeys = hasIssueKeys &&
         hasIssueKeys
             // Remove any keys that lead with a numeric value
-            .filter((issue) => !issue.charAt(0).match(isNumeric))
+            .filter(function (issue) { return !issue.charAt(0).match(isNumeric); })
             // Convert to uppercase so keys can be matched to Jira issues
-            .map((issueKey) => issueKey.toUpperCase());
+            .map(function (issueKey) { return issueKey.toUpperCase(); });
     return (issueKeys && issueKeys) || [];
 };
 exports.issueKeyRegex = issueKeyRegex;
-//# sourceMappingURL=findIssueKeys.js.map

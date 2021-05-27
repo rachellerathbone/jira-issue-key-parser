@@ -2,7 +2,7 @@
     "name": "jira-issue-key-parser",
     "version": "0.0.4",
     "description": "A very fast HTML parser, generating a simplified DOM, with basic element query support.",
-    "main": "src/index.ts",
+    "main": "dist/index.js",
     "scripts": {
         "build": "tsc",
         "format": "npx prettier --write .",
