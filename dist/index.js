@@ -13,10 +13,6 @@ var issueKeyParser = function () {
                 logger.warn("invalid value passed to parser");
             return findIssueKeys_1.issueKeyRegex(text);
         },
-        referenceLink: function (text) {
-            var referenceRegex = /\[([A-Z]+-[0-9]+)\](?!\()/g;
-            return referenceRegex.exec(text);
-        },
     };
 };
 exports.default = issueKeyParser;
