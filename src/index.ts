@@ -1,6 +1,5 @@
 import {issueKeyRegex} from './util/findIssueKeys';
 import Logger from './config/logger';
-import {MAX_CHARS_TO_PARSE} from './util/constants';
 
 const logger = new Logger().getInstance();
 
@@ -12,8 +11,9 @@ const issueKeyParser = () => {
 
             return issueKeyRegex(text);
         },
-        lastIndex: (text: string) => {
-            return text.substring(0, MAX_CHARS_TO_PARSE);
+        referenceLink: (text: string) => {
+            const referenceRegex = /\[([A-Z]+-[0-9]+)\](?!\()/g;
+            return referenceRegex.exec(text);
         },
     };
 };
