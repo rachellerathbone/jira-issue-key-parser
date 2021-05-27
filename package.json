@@ -1,7 +1,7 @@
 {
     "name": "jira-issue-key-parser",
     "version": "0.0.5",
-    "description": "A very fast HTML parser, generating a simplified DOM, with basic element query support.",
+    "description": "A parser for Jira issue keys.",
     "main": "dist/index.js",
     "scripts": {
         "build": "tsc",
