@@ -5,7 +5,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var findIssueKeys_1 = require("./util/findIssueKeys");
 var logger_1 = __importDefault(require("./config/logger"));
-var constants_1 = require("./util/constants");
 var logger = new logger_1.default().getInstance();
 var issueKeyParser = function () {
     return {
@@ -14,8 +13,9 @@ var issueKeyParser = function () {
                 logger.warn("invalid value passed to parser");
             return findIssueKeys_1.issueKeyRegex(text);
         },
-        lastIndex: function (text) {
-            return text.substring(0, constants_1.MAX_CHARS_TO_PARSE);
+        referenceLink: function (text) {
+            var referenceRegex = /\[([A-Z]+-[0-9]+)\](?!\()/g;
+            return referenceRegex.exec(text);
         },
     };
 };

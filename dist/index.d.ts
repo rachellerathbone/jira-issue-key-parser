@@ -1,5 +1,5 @@
 declare const issueKeyParser: () => {
     parse: (text: string) => string[] | null;
-    lastIndex: (text: string) => string;
+    referenceLink: (text: string) => RegExpExecArray | null;
 };
 export default issueKeyParser;

@@ -11,10 +11,6 @@ const issueKeyParser = () => {
 
             return issueKeyRegex(text);
         },
-        referenceLink: (text: string) => {
-            const referenceRegex = /\[([A-Z]+-[0-9]+)\](?!\()/g;
-            return referenceRegex.exec(text);
-        },
     };
 };
 
