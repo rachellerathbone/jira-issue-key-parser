@@ -16,7 +16,6 @@ coverage
 # nyc test coverage
 .nyc_output
 
-
 # Dependency directories
 node_modules/
 

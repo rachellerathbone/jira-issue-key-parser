@@ -6,7 +6,9 @@ const logger = new Logger().getInstance();
 const issueKeyParser = () => {
     return {
         parse: (text: string) => {
-            logger.info(`parsing: ${text}`);
+            if (typeof text !== 'string')
+                logger.warn(`invalid value passed to parser`);
+
             return issueKeyRegex(text);
         },
     };

@@ -1,7 +1,6 @@
 # Jira Issue Key Parser
 
-Issue key parser is a simple library used to parse strings for Jira issue keys from commit messages, branches,
-pull requests, pushes, and reference links.
+Issue key parser is a simple library used to parse strings for Jira issue keys from commit messages, branches, and pull requests.
 
 This library accepts keys that follow these patterns:
 
