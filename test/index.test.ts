@@ -103,6 +103,14 @@ describe('IssueKeyParser Suite', () => {
                 []
             );
         });
+
+        it('should not extract issue key with single char project key', () => {
+            const branchWithSingleCharIssueKey = 'F-67-my-feature';
+
+            expect(
+                issueKeyParser().parse(branchWithSingleCharIssueKey)
+            ).toEqual([]);
+        });
     });
 
     describe('issue keys - commits and pull requests (title and body)', () => {
