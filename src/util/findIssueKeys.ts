@@ -28,6 +28,8 @@ export const issueKeyRegex = (str: string) => {
         hasIssueKeys
             // Remove any keys that lead with a numeric value
             .filter((issue) => !issue.charAt(0).match(isNumeric))
+            // Remove any keys that have a single char
+            .filter((issue) => !issue.charAt(1).match('-'))
             // Convert to uppercase so keys can be matched to Jira issues
             .map((issueKey) => issueKey.toUpperCase());
 
