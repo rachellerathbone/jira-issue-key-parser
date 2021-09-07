@@ -30,3 +30,5 @@ typings/
 
 # Optional eslint cache
 .eslintcache
+
+dist
