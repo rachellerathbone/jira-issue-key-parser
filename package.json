@@ -1,6 +1,6 @@
 {
     "name": "jira-issue-key-parser",
-    "version": "0.0.11",
+    "version": "0.0.12",
     "description": "A parser for Jira issue keys.",
     "main": "dist/index.js",
     "scripts": {
@@ -48,7 +48,6 @@
         "url": "https://github.com/rachellerathbone/jira-issue-key-parser/issues"
     },
     "dependencies": {
-        "winston": "^3.3.3"
     },
     "homepage": "https://github.com/rachellerathbone/jira-issue-key-parser#readme",
     "license": "ISC"

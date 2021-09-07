@@ -16,22 +16,22 @@
  *      - JRA 123 (missing hyphen from key)
  */
 
-export const issueKeyRegex = (str: string) => {
-    if (typeof str !== 'string') return null;
+export const issueKeyRegex = (str: string): string[] => {
+    if (typeof str !== 'string') return [];
 
     const issueKeyRegex = /[A-Za-z0-9]+-[0-9]+/g;
-    const hasIssueKeys = str.match(issueKeyRegex);
+    const matches = str.match(issueKeyRegex);
     const isNumeric = /[0-9]+/g;
 
-    const issueKeys =
-        hasIssueKeys &&
-        hasIssueKeys
-            // Remove any keys that lead with a numeric value
-            .filter((issue) => !issue.charAt(0).match(isNumeric))
-            // Remove any keys that have a single char
-            .filter((issue) => !issue.charAt(1).match('-'))
-            // Convert to uppercase so keys can be matched to Jira issues
-            .map((issueKey) => issueKey.toUpperCase());
+    if (!matches) {
+        return [];
+    }
 
-    return (issueKeys && issueKeys) || [];
+    return matches
+        // Remove any keys that lead with a numeric value
+        .filter((issue) => !issue.charAt(0).match(isNumeric))
+        // Remove any keys that have a single char
+        .filter((issue) => !issue.charAt(1).match('-'))
+        // Convert to uppercase so keys can be matched to Jira issues
+        .map((issueKey) => issueKey.toUpperCase()) || [];
 };

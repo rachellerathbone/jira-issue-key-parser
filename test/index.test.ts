@@ -199,15 +199,15 @@ describe('IssueKeyParser Suite', () => {
 
     it('should handle incorrect types', () => {
         // @ts-ignore
-        issueKeyParser().parse(2);
-        issueKeyParser().parse('');
+        expect(issueKeyParser().parse(2)).toEqual([]);
+        expect(issueKeyParser().parse('')).toEqual([]);
         // @ts-ignore
-        issueKeyParser().parse([]);
+        expect(issueKeyParser().parse([])).toEqual([]);
         // @ts-ignore
-        issueKeyParser().parse({});
+        expect(issueKeyParser().parse({})).toEqual([]);
         // @ts-ignore
-        issueKeyParser().parse(null);
+        expect(issueKeyParser().parse(null)).toEqual([]);;
         // @ts-ignore
-        issueKeyParser().parse(undefined);
+        expect(issueKeyParser().parse(undefined)).toEqual([]);;
     });
 });
